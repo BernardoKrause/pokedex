@@ -36,6 +36,7 @@ function Home() {
         setPokemons(filteredPokemons);
     }
 
+
     return (
         <div className="Home">
             <Navbar pokemonFilter={pokemonFilter} />

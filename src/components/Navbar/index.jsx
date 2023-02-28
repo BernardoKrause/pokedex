@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar( { pokemonFilter } ) {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
-      <AppBar position="static" sx={{backgroundColor: "#121214"}}>
+      <AppBar position="static" sx={{backgroundColor: "#252525"}}>
         <Toolbar>
           <Box display="flex" justifyContent="space-between" alignItems={"center"} width="100%">
             <Box component="img" src="/assets/pokemon-logo.png" height="3em"></Box>
