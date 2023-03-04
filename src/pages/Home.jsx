@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 import Navbar from '../components/Navbar'
 import PokemonCard from '../components/PokemonCard'
+import PokemonList from '../components/PokemonList'
 import { Skeletons } from '../components/Skeletons'
 
 function Home() {
@@ -17,7 +18,7 @@ function Home() {
 
     const getPokemons = () => {
         var endpoints = []
-        for(var i = 1; i <= 200; i ++){
+        for(var i = 1; i <= 6; i ++){
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
         }
         axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res)).catch((err) => console.log(err))
@@ -36,9 +37,8 @@ function Home() {
         setPokemons(filteredPokemons);
     }
 
-
     return (
-        <div className="Home">
+        <>
             <Navbar pokemonFilter={pokemonFilter} />
             <Container maxWidth="false">
                 <Grid container spacing={2}>
@@ -51,7 +51,8 @@ function Home() {
                     )}                                          
                 </Grid>
             </Container>
-        </div>
+            <PokemonList pokemons={pokemons}/>
+        </>
     )
 }
 

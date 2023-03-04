@@ -22,9 +22,18 @@ export default function PokemonCard({ name, image, types }) {
           <Typography sx={{ textTransform: 'capitalize' }} gutterBottom variant="h5" component="div">
             {name}
           </Typography>
-          <Typography>
+          <Typography component="div">
             {types.map((type, key) => (
-              <Box component="div" sx={{ display: 'inline', fontSize: '12px', fontWeight: 'bold', marginRight: '6px' }} className={types[key].type.name}>{types[key].type.name.toUpperCase()}</Box>
+              <Box 
+                key={key}
+                component="div" 
+                sx={{ display: 'inline', 
+                fontSize: '12px', 
+                fontWeight: 'bold', 
+                marginRight: '6px' }} 
+                className={types[key].type.name}>
+                  {types[key].type.name.toUpperCase()}
+              </Box>
             ))}   
           </Typography>
           {/*<Typography variant="body2" color="text.secondary">
